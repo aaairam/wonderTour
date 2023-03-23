@@ -531,7 +531,6 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
 }
 .header .toggle__dot {
   display: block;
-  cursor: pointer;
   transition: 0.1s ease;
   padding: 1rem;
 }
@@ -651,6 +650,9 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   transform: translateY(-2px) rotate(210deg);
   transition: 0.5s ease;
 }
+.header .headerBlackHome {
+  display: none;
+}
 @media screen and (min-width: 1020px) {
   .header .toggle__dot {
     display: none;
@@ -727,6 +729,9 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
     justify-content: space-between;
     width: 100%;
   }
+  .header .headerBlackOne {
+    display: block;
+  }
   .header .headerBlackOne ul {
     display: flex;
     width: 80rem;
@@ -781,6 +786,25 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   }
   .header .headerBlackTwo a:hover {
     color: #01b3a7;
+  }
+  .header .headerBlackHome {
+    display: block;
+    width: 15rem;
+    background-color: red;
+    padding: 2rem;
+    position: absolute;
+    visibility: hidden;
+    transition: 0.5s ease-in-out;
+    opacity: 0;
+    right: 0;
+  }
+  .header .headerBlackHome.open {
+    top: 61px;
+    visibility: visible;
+    opacity: 1;
+  }
+  .header .headerBlackHome_content h5 {
+    font-size: 3rem;
   }
 }
 
@@ -940,4 +964,30 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
 }
 .wonderBanner_contents a.qoute.open {
   z-index: -1;
+}
+
+.wonderPhotosItems {
+  width: 30rem;
+  margin: 0 auto;
+}
+.wonderPhotosItem {
+  color: #fff;
+  transform: translate(0, 10%);
+}
+.wonderPhotosItem h5 {
+  font-size: 2rem;
+  color: #fff;
+  position: absolute;
+  bottom: 2rem;
+  left: 30%;
+}
+@media screen and (min-width: 1020px) {
+  .wonderPhotos .wonderPhotosItems {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+  }
+  .wonderPhotos .wonderPhotosItem {
+    width: 3 0rem;
+  }
 }/*# sourceMappingURL=main.css.map */

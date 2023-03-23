@@ -21,3 +21,10 @@ drop_down.forEach((dropd) => {
         dropd.querySelector("i").classList.toggle("open");
     });
 });
+
+const headerBlackHome = document.querySelector(".about");
+const about = document.querySelector(".headerBlackHome");
+headerBlackHome.addEventListener("click", () => {
+  headerBlackHome.classList.toggle("open");
+  about.classList.toggle("open");
+});
