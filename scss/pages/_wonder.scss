@@ -100,6 +100,25 @@
        width: 3 0rem;
       }
     }
+}
+
+.wonderPhotos{
+    &Items{
+      width: 30rem;
+      margin: 0 auto;
+    }
+    &Item {
+      color: #fff;
+      // transform: translate(0%, -10%);
+      transform: translate(0 , 10%);
+      h5{
+        font-size: 2rem;
+        color: #fff;
+        position: absolute;
+        bottom: 2rem;
+        left: 30%;
+      }
+    }
 
   }
 }

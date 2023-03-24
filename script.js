@@ -22,3 +22,10 @@ drop_down.forEach((dropd) => {
     });
 });
 
+const headerBlackHome = document.querySelector(".about");
+const about = document.querySelector(".headerBlackHome");
+headerBlackHome.addEventListener("click", () => {
+  headerBlackHome.classList.toggle("open");
+  about.classList.toggle("open");
+});
+

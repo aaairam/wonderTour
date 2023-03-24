@@ -93,7 +93,6 @@
     .toggle__dot{
         
         display: block;
-        cursor: pointer;
         transition: .1s ease;
         padding: 1rem;
         span{
@@ -243,6 +242,10 @@
         
     }
 
+    .headerBlackHome{
+        display: none;
+    }
+
     @include mediaQuery ($desktop) {
         .toggle__dot {
             display: none;
@@ -334,6 +337,9 @@
            
             &One{
                 position: relative;
+                display: block;
+
+
                 ul{
                     display: flex;  
                     width: 80rem;
