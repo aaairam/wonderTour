@@ -21,3 +21,4 @@ drop_down.forEach((dropd) => {
         dropd.querySelector("i").classList.toggle("open");
     });
 });
+

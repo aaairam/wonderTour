@@ -594,12 +594,19 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
 .header .toggleDotContents a.qoute span {
   font-size: 1.5rem;
   position: relative;
-  z-index: 1;
+  z-index: 999;
   color: #2C2C32;
   margin: 0 auto;
 }
-.header .toggleDotContents a.qoute span:hover {
+.header .toggleDotContents a.qoute span:hover span {
   color: #e1e1e1;
+}
+.header .toggleDotContents a.qoute span span {
+  font-size: 1.5rem;
+  position: relative;
+  z-index: 999;
+  color: #2C2C32;
+  margin: 0 auto;
 }
 .header .toggleDotContents a.qoute:after {
   content: "";
@@ -696,7 +703,7 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   .header .header_web_links a.qoute span {
     font-size: 1.5rem;
     position: relative;
-    z-index: 1;
+    z-index: 999;
     color: #2C2C32;
     margin: 0 auto;
   }
@@ -721,26 +728,30 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   .header .headerBlack {
     background-color: #162e44;
     display: block;
+    position: relative;
   }
   .header .headerBlack_wrapper {
     display: flex;
     justify-content: space-between;
     width: 100%;
   }
+  .header .headerBlackOne {
+    position: relative;
+  }
   .header .headerBlackOne ul {
     display: flex;
     width: 80rem;
     justify-content: space-between;
   }
-  .header .headerBlackOne li {
+  .header .headerBlackOne li.hoverOne {
     display: flex;
     align-items: center;
     position: relative;
   }
-  .header .headerBlackOne li span {
+  .header .headerBlackOne li.hoverOne span {
     font-size: 1rem;
   }
-  .header .headerBlackOne li:after {
+  .header .headerBlackOne li.hoverOne:after {
     content: "";
     position: absolute;
     top: 0;
@@ -753,14 +764,121 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
     transition: transform 0.25s ease-out;
     z-index: 1;
   }
-  .header .headerBlackOne li:hover:after {
+  .header .headerBlackOne li.hoverOne:hover:after {
     background-color: #01b3a7;
     color: #e1e1e1;
     transform: scaleX(1);
     transform-origin: top left;
   }
-  .header .headerBlackOne li:hover {
+  .header .headerBlackOne li.hoverOne:hover {
     background-color: rgba(255, 255, 255, 0.4980392157);
+  }
+  .header .headerBlackOne li.hoverOne:hover .drop {
+    display: block;
+  }
+  .header .headerBlackOne .activee {
+    background-color: rgba(255, 255, 255, 0.4980392157);
+  }
+  .header .headerBlackOne .activee:after {
+    background-color: #01b3a7;
+    color: #e1e1e1;
+    transform: scaleX(1);
+    transform-origin: top left;
+  }
+  .header .headerBlackOne .drop {
+    background-color: #e1e1e1;
+    display: flex;
+    align-items: center;
+    color: gray;
+    top: 6.8rem;
+    left: 0;
+    position: absolute;
+    padding: 2rem;
+    min-width: 25rem;
+    display: none;
+  }
+  .header .headerBlackOne .drop p {
+    position: relative;
+    padding-bottom: 2rem;
+  }
+  .header .headerBlackOne .drop a {
+    font-size: 1.8rem;
+    font-weight: 100;
+    color: gray;
+    padding: 0.5rem 0;
+  }
+  .header .headerBlackOne .drop a:hover {
+    margin-left: 1rem;
+    transition: 0.2s ease;
+  }
+  .header .headerBlackOne .drop a::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0.3rem;
+    height: 60%;
+    transition: 0.2s ease;
+    z-index: 1;
+    opacity: 0;
+  }
+  .header .headerBlackOne .drop a:hover:after {
+    background-color: #01b3a7;
+    transform-origin: bottom left;
+    opacity: 1;
+    left: -1rem;
+  }
+  .header .headerBlackOne .pagesDrop {
+    background-color: #e1e1e1;
+    position: absolute;
+    top: 6.8rem;
+    left: -70.8rem;
+  }
+  .header .headerBlackOne .pagesDrop_main {
+    display: flex;
+  }
+  .header .headerBlackOne .pagesDrop ul {
+    margin-left: 2rem;
+    display: block;
+  }
+  .header .headerBlackOne .pagesDrop ul h5 {
+    font-size: 3rem;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    font-weight: 200;
+  }
+  .header .headerBlackOne .pagesDrop ul a.anchor {
+    font-size: 2rem;
+    padding: 0;
+    font-weight: 100;
+    color: gray;
+  }
+  .header .headerBlackOne .pagesDrop ul li {
+    padding-bottom: 1rem;
+  }
+  .header .headerBlackOne .pagesDrop ul li::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    width: 0.3rem;
+    height: 60%;
+    transition: 0.2s ease;
+    z-index: 1;
+    opacity: 0;
+  }
+  .header .headerBlackOne .pagesDrop ul li:hover:after {
+    background-color: #01b3a7;
+    transform-origin: bottom left;
+    opacity: 1;
+    left: -1rem;
+  }
+  .header .headerBlackOne .pagesDrop_elements {
+    width: 30rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+    border-right: 1px solid gray;
   }
   .header .headerBlackOne a {
     color: #e1e1e1;
@@ -940,4 +1058,32 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
 }
 .wonderBanner_contents a.qoute.open {
   z-index: -1;
+}
+
+.wonderPhotosItems {
+  width: 30rem;
+  margin: 0 auto;
+}
+.wonderPhotosItem {
+  color: #fff;
+  transform: translate(0, 10%);
+}
+.wonderPhotosItem h5 {
+  font-size: 2rem;
+  color: #fff;
+  position: absolute;
+  bottom: 2rem;
+  left: 30%;
+}
+@media screen and (min-width: 1020px) {
+  .wonderPhotos .wonderPhotosItems {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    width: 100%;
+    transform: translate(0%, -20%);
+  }
+  .wonderPhotos .wonderPhotosItem {
+    width: 3 0rem;
+  }
 }/*# sourceMappingURL=main.css.map */
