@@ -544,7 +544,7 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   border-radius: 8rem;
 }
 .header .toggle__dot.open span:nth-child(1) {
-  transform: translate(0, 7px) rotate(225deg);
+  transform: translate(0, 2px) rotate(225deg);
   transition: 0.5s ease;
 }
 .header .toggle__dot.open span:nth-child(2) {
@@ -552,7 +552,7 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   transition: 0.5s ease;
 }
 .header .toggle__dot.open span:nth-child(3) {
-  transform: translate(0, -7px) rotate(-225deg);
+  transform: translate(0, -2px) rotate(-225deg);
   transition: 0.5s ease;
 }
 .header .toggleDot {
@@ -565,6 +565,7 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   transition: 0.5s ease-in-out;
   opacity: 0;
   right: 0;
+  z-index: 55;
 }
 .header .toggleDot.open {
   top: 61px;
@@ -581,7 +582,7 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   color: #01b3a7;
 }
 .header .toggleDotContents a.qoute {
-  padding: 2rem 2.5rem;
+  padding: 1.5rem 1rem;
   display: flex;
   align-items: center;
   font-size: clamp(1.5vw, 1.8rem, 2.5rem);
@@ -590,17 +591,10 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   position: relative;
   border: 1px solid #01b3a7;
 }
-.header .toggleDotContents a.qoute span {
-  font-size: 1.5rem;
-  position: relative;
-  z-index: 999;
-  color: #2C2C32;
-  margin: 0 auto;
-}
-.header .toggleDotContents a.qoute span:hover span {
+.header .toggleDotContents a.qoute:hover span {
   color: #e1e1e1;
 }
-.header .toggleDotContents a.qoute span span {
+.header .toggleDotContents a.qoute span {
   font-size: 1.5rem;
   position: relative;
   z-index: 999;
@@ -646,15 +640,16 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   margin-bottom: 0.4rem;
 }
 .header .toggle__menu.open span:nth-child(1) {
-  transform: translateY(2px) rotate(150deg);
+  transform: translateY(1px) rotate(150deg);
   transition: 0.5s ease;
 }
 .header .toggle__menu.open span:nth-child(2) {
   transform: rotate(180deg);
   transition: 0.5s ease;
+  width: 3.5rem;
 }
 .header .toggle__menu.open span:nth-child(3) {
-  transform: translateY(-2px) rotate(210deg);
+  transform: translateY(-1px) rotate(210deg);
   transition: 0.5s ease;
 }
 .header .headerBlackHome {
@@ -743,18 +738,25 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   }
   .header .headerBlackOne ul {
     display: flex;
-    width: 80rem;
-    justify-content: space-between;
   }
-  .header .headerBlackOne li.hoverOne {
+  .header .headerBlackOne li {
     display: flex;
     align-items: center;
     position: relative;
   }
-  .header .headerBlackOne li.hoverOne span {
+  .header .headerBlackOne li:last-child .drop {
+    display: flex;
+    max-width: 120rem;
+    left: -65rem;
+    display: none;
+  }
+  .header .headerBlackOne li:hover {
+    display: flex;
+  }
+  .header .headerBlackOne li span {
     font-size: 1rem;
   }
-  .header .headerBlackOne li.hoverOne:after {
+  .header .headerBlackOne li:after {
     content: "";
     position: absolute;
     top: 0;
@@ -767,22 +769,22 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
     transition: transform 0.25s ease-out;
     z-index: 1;
   }
-  .header .headerBlackOne li.hoverOne:hover:after {
+  .header .headerBlackOne li:hover:after {
     background-color: #01b3a7;
     color: #e1e1e1;
     transform: scaleX(1);
     transform-origin: top left;
   }
-  .header .headerBlackOne li.hoverOne:hover {
+  .header .headerBlackOne li:hover {
     background-color: rgba(255, 255, 255, 0.4980392157);
   }
-  .header .headerBlackOne li.hoverOne:hover .drop {
+  .header .headerBlackOne li:hover .drop {
     display: block;
   }
-  .header .headerBlackOne .activee {
+  .header .headerBlackOne .active {
     background-color: rgba(255, 255, 255, 0.4980392157);
   }
-  .header .headerBlackOne .activee:after {
+  .header .headerBlackOne .active:after {
     background-color: #01b3a7;
     color: #e1e1e1;
     transform: scaleX(1);
@@ -790,15 +792,27 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   }
   .header .headerBlackOne .drop {
     background-color: #e1e1e1;
-    display: flex;
     align-items: center;
     color: gray;
     top: 6.8rem;
     left: 0;
     position: absolute;
-    padding: 2rem;
+    padding: 2rem 0;
     min-width: 25rem;
     display: none;
+    padding-left: 2rem;
+    z-index: 55;
+  }
+  .header .headerBlackOne .drop__wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0;
+    width: 120rem;
+  }
+  .header .headerBlackOne .drop h5 {
+    font-size: 2.5rem;
+    font-weight: 200;
+    color: black;
   }
   .header .headerBlackOne .drop p {
     position: relative;
@@ -830,6 +844,43 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
     transform-origin: bottom left;
     opacity: 1;
     left: -1rem;
+  }
+  .header .headerBlackOne .drop .dropp {
+    padding: 0 2rem;
+    border-right: 1px solid hsl(0, 0%, 80%);
+  }
+  .header .headerBlackOne .drop .dropp:nth-child(2) {
+    border-right: 1px solid hsl(0, 0%, 80%);
+  }
+  .header .headerBlackOne .drop .dropp .lol ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0rem;
+    max-width: 50rem;
+  }
+  .header .headerBlackOne .drop .dropp ul {
+    display: block;
+  }
+  .header .headerBlackOne .drop .droppImg {
+    width: -moz-fit-content;
+    width: fit-content;
+    display: flex;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  .header .headerBlackOne .drop .droppImg img {
+    margin-right: 2rem;
+    width: 15rem;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-fit: center center;
+       object-fit: center center;
+    display: block;
+  }
+  .header .headerBlackOne .drop .droppImg img:hover {
+    transform: scale(1.1);
+    transition: transform 0.5s ease-out;
   }
   .header .headerBlackOne .pagesDrop {
     background-color: #e1e1e1;
@@ -881,7 +932,6 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 2rem;
-    border-right: 1px solid gray;
   }
   .header .headerBlackOne a {
     color: #e1e1e1;
@@ -992,6 +1042,10 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   }
 }
 
+.slider {
+  z-index: 1;
+}
+
 .wonderBanner {
   background-image: url(/img/banner.jpg);
   background-repeat: no-repeat;
@@ -1063,6 +1117,148 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   z-index: -1;
 }
 
+.wonderBannerR {
+  background-image: url(/img/banner2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.wonderBannerR_wrapper {
+  width: 70%;
+  align-items: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.wonderBannerR_contents {
+  align-items: center;
+}
+.wonderBannerR_contents p {
+  font-size: 1.8rem;
+  width: 40rem;
+  color: #fff;
+}
+.wonderBannerR_contents h4 {
+  font-size: 4rem;
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 4rem;
+}
+.wonderBannerR_contents h4 span {
+  color: #fff;
+  font-weight: 800;
+}
+.wonderBannerR_contents a.qoute {
+  padding: 2rem;
+  padding-bottom: 1.5rem;
+  align-items: center;
+  position: relative;
+  border: 1px solid #fff;
+}
+.wonderBannerR_contents a.qoute:hover {
+  border: 1px solid #31af36;
+}
+.wonderBannerR_contents a.qoute span {
+  font-size: 1.5rem;
+  position: relative;
+  z-index: 90;
+  color: #fff;
+  margin: 0 auto;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.wonderBannerR_contents a.qoute:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.25s ease-out;
+  z-index: 1;
+}
+.wonderBannerR_contents a.qoute:hover:after {
+  background-color: #31af36;
+  transform: scaleX(1);
+  transform-origin: center;
+}
+.wonderBannerR_contents a.qoute.open {
+  z-index: -1;
+}
+
+.wonderBannerRR {
+  background-image: url(/img/banner3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.wonderBannerRR_wrapper {
+  width: 70%;
+  align-items: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.wonderBannerRR_contents {
+  align-items: center;
+}
+.wonderBannerRR_contents p {
+  font-size: 1.8rem;
+  width: 40rem;
+  color: #fff;
+}
+.wonderBannerRR_contents h4 {
+  font-size: 4rem;
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 4rem;
+}
+.wonderBannerRR_contents h4 span {
+  color: #fff;
+  font-weight: 800;
+}
+.wonderBannerRR_contents a.qoute {
+  padding: 2rem;
+  padding-bottom: 1.5rem;
+  align-items: center;
+  position: relative;
+  border: 1px solid #fff;
+}
+.wonderBannerRR_contents a.qoute:hover {
+  border: 1px solid #31af36;
+}
+.wonderBannerRR_contents a.qoute span {
+  font-size: 1.5rem;
+  position: relative;
+  z-index: 90;
+  color: #fff;
+  margin: 0 auto;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.wonderBannerRR_contents a.qoute:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.25s ease-out;
+  z-index: 1;
+}
+.wonderBannerRR_contents a.qoute:hover:after {
+  background-color: #31af36;
+  transform: scaleX(1);
+  transform-origin: center;
+}
+.wonderBannerRR_contents a.qoute.open {
+  z-index: -1;
+}
+
 .wonderPhotosItems {
   width: 30rem;
   margin: 0 auto;
@@ -1104,4 +1300,143 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   position: absolute;
   bottom: 2rem;
   left: 30%;
+}
+.wonderPhotos .ourTours .arrow {
+  display: block;
+  cursor: pointer;
+  transition: 0.1s ease;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+.wonderPhotos .ourTours .arrow:hover {
+  background-color: #fff;
+}
+.wonderPhotos .ourTours .arrow span {
+  width: 2.3rem;
+  height: 0.2rem;
+  background-color: black;
+  display: block;
+  transition: 0.5s ease;
+}
+.wonderPhotos .ourTours .arrow span:not(:last-child) {
+  margin-bottom: 0.4rem;
+}
+@media screen and (min-width: 1020px) {
+  .wonderPhotos .wonderPhotosItems {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    margin: 0 15rem;
+  }
+  .wonderPhotos .wonderPhotosItems img:hover {
+    transform: scale(1.5);
+    transition: transform 0.5s ease-out;
+  }
+  .wonderPhotos .wonderPhotosItem {
+    width: 30rem;
+    overflow: hidden;
+  }
+}
+
+.bigBanner {
+  text-align: center;
+  background-color: #fff;
+}
+.bigBanner img {
+  width: 45rem;
+  padding-top: 10rem;
+  margin-bottom: 4rem;
+}
+.bigBanner_desktop {
+  display: none;
+}
+.bigBanner h5 {
+  font-size: 3rem;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 4rem;
+}
+.bigBanner h3 {
+  font-size: 2.5rem;
+  border-bottom: 1px solid #e1e1e1;
+  border-top: 1px solid #e1e1e1;
+  width: 38rem;
+  margin: 0 auto;
+  margin-bottom: 4rem;
+}
+.bigBanner h3:hover {
+  color: #01b3a7;
+}
+.bigBanner h3 span {
+  color: #01b3a7;
+  border-bottom: 1px solid #01b3a7;
+  border-top: 1px solid #01b3a7;
+}
+.bigBanner h3 span:hover {
+  color: black;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+}
+.bigBanner p {
+  font-size: 1.5rem;
+  margin-bottom: 4rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.bigBanner .botton {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+.bigBanner .bottongreen a {
+  padding: 2rem;
+  background-color: #01b3a7;
+  color: #fff;
+  margin-right: 1rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  overflow: hidden;
+}
+.bigBanner .bottongreen a:hover {
+  background-color: #fff;
+  color: black;
+  border: 1px solid black;
+  transform: scale(1.5);
+  transition: transform 0.25s ease-out;
+}
+.bigBanner .bottonblack a {
+  padding: 2rem;
+  background-color: #fff;
+  border: 1px solid black;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.bigBanner .bottonblack a:hover {
+  background-color: #01b3a7;
+  color: black;
+  border: 1px solid #01b3a7;
+  transform: scale(1.5);
+  transition: transform 0.25s ease-out;
+}
+
+@media screen and (min-width: 1020px) {
+  .bigBanner {
+    width: 120rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0;
+    margin: 0 auto;
+  }
+  .bigBanner_Text {
+    padding-top: 10rem;
+  }
+  .bigBanner_Text h5 {
+    font-size: 5rem;
+  }
+  .bigBanner_Text h3 {
+    display: none;
+  }
+  .bigBanner_desktop {
+    display: block;
+  }
 }/*# sourceMappingURL=main.css.map */

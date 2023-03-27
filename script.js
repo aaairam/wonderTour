@@ -29,3 +29,15 @@ headerBlackHome.addEventListener("click", () => {
   about.classList.toggle("open");
 });
 
+var slider = tns({
+  container: '.slider',
+  items: 1,
+  slideBy: 'page',
+  autoplay: true,
+  axis: "vertical",
+  controls: false,
+  nav: false,
+  autoplayPosition: false,
+  autoplayButton:false,
+});
+
