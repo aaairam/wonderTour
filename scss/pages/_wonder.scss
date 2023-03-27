@@ -219,35 +219,7 @@
   
 }
 
-.wonderPhotos{
-  &Items{
-    width: 30rem;
-    margin: 0 auto;
-  }
-  &Item {
-    color: #fff;
-    transform: translate(0 , 10%);
-    h5{
-      font-size: 2rem;
-      color: #fff;
-      position: absolute;
-      bottom: 2rem;
-      left: 30%;
-    }
-  }
 
-  @include mediaQuery($desktop){
-    .wonderPhotos{
-      &Items{
-        @include grid(3, 2rem);
-        width: 100%;
-        transform: translate(0%, -20%);
-      }
-      &Item{
-       width: 3 0rem;
-      }
-    }
-}
 
 .wonderPhotos{
     &Items{
@@ -268,40 +240,55 @@
     }
   }
   .ourTours{
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+     h3{
+     text-align: center;
+     margin-right: 2rem;
+     }
     .arrow{
-      display: block;
-      cursor: pointer;  
-      transition: .1s ease;
-      padding: 1rem;
-      border-radius: .5rem;
-      &:hover {
-          background-color: $clr-light;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           gap: 1rem;
+            transition: .5s ease-in-out;
+            span{
+                transition: .5s ease-in-out;
+                position: relative;
+                height: .2rem;
+                width: 2rem;
+                background-color: $clr-dark;
+                display: block;
+                &::after{
+                    content: "";
+                    height: 0;
+                    width: 0;
+                    border-style: solid;
+                    border-width: 4px 0 3px 8px;
+                    border-color: transparent transparent transparent $clr-dark;
+                    position: absolute;
+                    right: -.5rem; 
+                    top: -.25rem;
+                }
+        }
+      &:hover span{
+        width: 5rem;
+
       }
-      span{
-          width: 2.3rem;
-          height: .2rem;
-          background-color: black;
-          display: block;          
-          transition: .5s ease;  
-          &:not(:last-child) {
-              margin-bottom: .4rem;
-          }
-        
+      &:hover{
+        margin-left: -1rem;
       }
+    }
+
   }
-  }
-
-
-
-
   @include mediaQuery($desktop){
     .wonderPhotos{
       &Items{
         @include grid(3, 2rem);
-        margin: 0 15rem;
-        
+        width: 120rem;
+        transform: translate(0%, -20%);
         img{
-          
           &:hover {
             transform: scale(1.5);
             transition: transform 0.5s ease-out;
@@ -310,13 +297,13 @@
         
       }
       &Item{
-       width: 30rem;
+       width: 36rem;
        overflow: hidden;
 
       }
     }
   }
-}
+
 
 .bigBanner{
   text-align: center;
@@ -425,7 +412,30 @@
       }
       &_desktop{
         display: block;
-        
+        ul{
+          li{
+                padding: 2rem;
+                position: relative;
+                &::after{
+                    content: '';
+                    height: 3px;
+                    background-color: #00754a;
+                    position: absolute;
+                    left: 0;
+                    width: 0;
+                    bottom: 0;
+                    transition: 300ms;
+                }
+                &.active::after{
+                    width: 100%;
+                }
+                a{
+                    font-size: 2rem;
+                    color: black;
+                    font-size: 2rem;
+                }
+          }
+        }
       }
     
 }
