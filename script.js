@@ -41,3 +41,27 @@ var slider = tns({
   autoplayButton:false,
 });
 
+
+const bannerJava=document.querySelectorAll(".bannerJava_link");
+const bannerContent=document.querySelectorAll(".bannerJava_content");
+bannerJava.forEach((bannerJava) => {
+  bannerJava.addEventListener("click", () => {
+    removeActivebannerJava();
+    bannerJava.classList.add("active");
+    const activeContent= document.querySelector(`#${bannerJava.id}-content`);
+    removeActiveContent();
+    activeContent.classList.add("active");
+  })
+})
+
+function removeActivebannerJava(){
+ bannerJava.forEach((bannerJava) =>{
+    bannerJava.classList.remove("active");
+  })
+}
+function removeActiveContent(){
+  bannerJavaContent.forEach((bannerJava) =>{
+    bannerJava.classList.remove("active");
+  })
+}
+
