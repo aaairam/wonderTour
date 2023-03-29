@@ -60,7 +60,7 @@ function removeActivebannerJava(){
   })
 }
 function removeActiveContent(){
-  bannerJavaContent.forEach((bannerJava) =>{
+  bannerContent.forEach((bannerJava) =>{
     bannerJava.classList.remove("active");
   })
 }

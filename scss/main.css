@@ -57,6 +57,7 @@ body {
   line-height: 1.4;
   color: #2C2C32;
   transition: 0.5s ease;
+  height: 10000px;
 }
 
 body.show {
@@ -455,6 +456,12 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   background-color: #141417;
 }
 
+.header_main {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+}
+
 .header {
   background-color: #fff;
   position: relative;
@@ -512,22 +519,39 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   max-height: 100rem;
   transition: 0.8s ease-in-out;
 }
+.header__mobile__nav .toggleContents h5 {
+  color: #31af36;
+  font-size: 2rem;
+  font-weight: 400;
+}
 .header__mobile__nav .toggleContents ul {
   border-top: 1px solid #e1e1e1;
+  overflow: scroll;
+  height: 100vh;
 }
 .header__mobile__nav .toggleContents ul .active {
-  background-color: cyan;
+  background-color: #01b3a7;
   color: #fff;
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+.header__mobile__nav .toggleContents ul .active a {
+  color: #e1e1e1;
 }
 .header__mobile__nav .toggleContents ul li {
   padding-bottom: 2rem;
   padding-top: 2rem;
   padding-left: 2rem;
 }
+.header__mobile__nav .toggleContents ul li a {
+  color: gray;
+}
 .header__mobile__nav .toggleContents ul li:hover {
-  background-color: cyan;
+  background-color: #01b3a7;
+  color: #e1e1e1;
+}
+.header__mobile__nav .toggleContents ul li:hover a {
+  color: #e1e1e1;
 }
 .header .toggle__dot {
   display: block;
@@ -1053,7 +1077,6 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
 }
 .wonderBanner_wrapper {
   width: 70%;
-  align-items: center;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -1354,48 +1377,56 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
 }
 .bannerJava_title ul {
   display: flex;
-  margin: 0 auto;
   justify-content: center;
-  margin-top: 2rem;
+  max-width: 50rem;
+  width: 30rem;
+  flex-wrap: wrap;
+  margin: 0 auto;
 }
 .bannerJava_title ul li {
   padding: 1rem;
   position: relative;
-}
-.bannerJava_title ul li::after {
-  content: "";
-  height: 3px;
-  background-color: #31af36;
-  position: absolute;
-  left: 0;
-  width: 0;
-  bottom: 0;
-  transition: 300ms;
-}
-.bannerJava_title ul li.active::after {
-  width: 100%;
+  border-top: 2px solid gray;
+  border-bottom: 2px solid gray;
+  margin-top: 2rem;
 }
 .bannerJava_title ul li a {
-  font-size: 1rem;
   color: black;
   font-size: 2rem;
 }
+.bannerJava_title ul li:hover a {
+  color: #01b3a7;
+}
+.bannerJava_title ul li.active {
+  border-top: 2px solid #01b3a7;
+  border-bottom: 2px solid #01b3a7;
+}
+.bannerJava_title ul li.active a {
+  color: #01b3a7;
+}
 .bannerJava .bannerJava_tab {
-  background: yellow;
+  background: #31af36;
 }
-.bannerJava .bannerJava_tab_content {
-  display: flex;
+.bannerJava_content {
   position: absolute;
+  display: none;
 }
-.bannerJava .bannerJava_tab_content.active {
-  display: block;
+.bannerJava_content p {
+  width: 42rem;
+  text-align: center;
+  margin-left: 1rem;
+  padding-top: 2rem;
+  font-size: 1.5rem;
+}
+.bannerJava_content.active {
   opacity: 1;
   transition: 0.5s ease;
+  display: unset;
 }
 .bannerJava .botton {
   display: flex;
   justify-content: center;
-  margin-top: 3rem;
+  margin-top: 15rem;
   margin-bottom: 5rem;
 }
 .bannerJava .bottongreen a {
@@ -1436,6 +1467,29 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
     width: 90rem;
     margin-right: 4rem;
   }
+  .bannerJava .bannerJava_text ul {
+    display: flex;
+    width: 100rem;
+    flex-wrap: nowrap;
+  }
+  .bannerJava .bannerJava_text ul li {
+    padding: 1rem;
+    position: relative;
+    border-top: none;
+  }
+  .bannerJava .bannerJava_text ul li::after {
+    content: "";
+    height: 3px;
+    background-color: #01b3a7;
+    position: absolute;
+    left: 0;
+    width: 0;
+    bottom: -0.2rem;
+    transition: 300ms;
+  }
+  .bannerJava .bannerJava_text ul li.active::after {
+    width: 100%;
+  }
 }
 
 .card_content {
@@ -1459,6 +1513,10 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
   font-size: 2.2rem;
   padding-top: 2rem;
   color: black;
+  cursor: pointer;
+}
+.cardbox h3:hover {
+  color: #01b3a7;
 }
 .cardbox p {
   font-size: 1.5rem;
@@ -1485,8 +1543,183 @@ h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
     text-align: justify;
   }
   .card .cardbox:hover {
-    border: 1px solid lightgray;
+    border: none;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     transition: 0.5s ease-in-out;
   }
+}
+
+.cardpic_content {
+  margin-bottom: 5rem;
+}
+.cardpic_title h3 {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+.cardpic_img {
+  position: relative;
+}
+.cardpic_img span {
+  padding: 1rem;
+  background-color: #01b3a7;
+  color: #fff;
+  position: absolute;
+  left: 39.8rem;
+}
+.cardpic_text {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.cardpic_text a {
+  font-size: 2.5rem;
+  color: black;
+  margin-bottom: 2rem;
+}
+.cardpic_textA {
+  display: flex;
+  margin-top: 1rem;
+}
+.cardpic_textA small {
+  font-size: 1.2rem;
+  margin-left: 2rem;
+  color: gray;
+  justify-content: center;
+}
+.cardpic_textP {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+.cardpic_textP p {
+  font-size: 1.5rem;
+  color: gray;
+}
+.cardpic_button {
+  margin-top: 4rem;
+}
+.cardpic_button .bottonblack a {
+  padding: 1.5rem;
+  background-color: #fff;
+  border: 2px solid black;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.cardpic_button .bottonblack a:hover {
+  background-color: #01b3a7;
+  color: black;
+  border: 1px solid #01b3a7;
+  transform: scale(1.5);
+  transition: transform 0.25s ease-out;
+}
+@media screen and (min-width: 1020px) {
+  .cardpic .cardpic_content {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 8rem;
+    border: 1px solid gray;
+  }
+  .cardpic_img img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-fit: center center;
+       object-fit: center center;
+    display: block;
+  }
+  .cardpic_img span {
+    padding: 1.3rem;
+    left: 107.8rem;
+    top: 0rem;
+    position: absolute;
+    font-size: 3rem;
+  }
+}
+.cardpic_text {
+  margin: 6rem 0;
+}
+.cardpic_text p {
+  width: 48rem;
+}
+
+.users__title h2 {
+  font-size: 3rem;
+  max-width: 35rem;
+  margin: 0 auto;
+  text-align: center;
+}
+.users__item {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  text-align: center;
+}
+.users__item img {
+  border-radius: 8rem;
+  border: 3px solid transparent;
+  transition: 0.5s ease;
+  transform: translateY(5rem);
+}
+.users__item img figure {
+  display: block;
+}
+.users__item svg {
+  margin-bottom: -1rem;
+}
+.users__item__content {
+  background: #808080;
+  padding: 2rem;
+}
+.users__item:hover img {
+  transform: translateY(3rem);
+  border: 3px solid #01b3a7;
+  transition: 0.5s ease;
+}
+
+.bannertwo {
+  background-image: url(/img/bannertwo.jpg);
+  height: 50vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
+.bannertwo_wrapper {
+  width: 60%;
+  margin: 0 auto;
+}
+.bannertwo_contents h2 {
+  font-size: 5rem;
+  color: #fff;
+  text-align: center;
+}
+.bannertwo_contents h2 span {
+  font-size: 4rem;
+  font-weight: 400;
+  color: #fff;
+}
+.bannertwo_contents p {
+  text-align: center;
+  color: #fff;
+}
+.bannertwo_contents .botton {
+  margin-top: 4rem;
+  text-align: center;
+}
+.bannertwo_contents .bottongreen a {
+  padding: 1.5rem;
+  background-color: #01b3a7;
+  color: #fff;
+  margin-right: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  overflow: hidden;
+}
+.bannertwo_contents .bottongreen a:hover {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  transform: scale(1.5);
+  transition: transform 0.25s ease-out;
 }/*# sourceMappingURL=main.css.map */
