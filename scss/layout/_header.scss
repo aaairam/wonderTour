@@ -1,7 +1,7 @@
 .header_main{
     position: fixed;
     z-index: 999;
-    width: 100%;
+    width: 100%; 
 }
 .header{
     background-color: $clr-light;
@@ -58,7 +58,6 @@
                     align-items: center;
                     justify-content: space-between;
                     padding-right: 2rem;
-
                 }
                 .Contents{
                     overflow: hidden;
@@ -70,18 +69,34 @@
                    &.open{
                     max-height: 100rem;
                     transition: .8s ease-in-out;
-                   }
+                    padding-left: 0;
 
+                    ul{
+                        height: auto;
+                        a{
+                            padding-left: 2rem;
+                        }
+                        li{
+                            &:nth-child(1){
+                               margin-top: 2rem;
+                            }
+                        }
+                    }
+                    
+                 
+                   }
                 }
                 h5{
                     color: #31af36;
                     font-size: 2rem;
                     font-weight: 400;
+                    margin-bottom: 2rem;
+                    padding-left: 2rem;
                 }
                 ul{
                     border-top: 1px solid #e1e1e1;
                     overflow: scroll;
-                    height: 100vh;
+                    height: 90vh;
                     
                     
                     .active{
@@ -97,6 +112,7 @@
                         padding-bottom: 2rem;
                         padding-top: 2rem;
                         padding-left: 2rem;
+
                           a{
                             color: gray;
                              }
@@ -133,18 +149,15 @@
         &.open {
 
             span:nth-child(1) {
-                transform: translate(0, 2px) rotate(225deg);
+                transform: translate(0, 2px) rotate(-225deg);
                 transition: .5s ease;
 
             }
 
-            span:nth-child(2) {
-                opacity: 0;
-                transition: .5s ease;
-            }
+           
 
             span:nth-child(3) {
-                transform: translate(0, -2px) rotate(-225deg);
+                transform: translate(0, -2px) rotate(225deg);
                 transition: .5s ease;
             }
         }
@@ -364,10 +377,11 @@
                     display: flex;
                 }
                 li{
+                    margin-right: 1rem;
                     &:last-child .drop{
                         display: flex;
                         max-width: 120rem;
-                        left: -65rem;
+                        left: -69rem;
                         display: none;
                     }
                     &:hover{
@@ -409,6 +423,7 @@
 
                   .active{
                     background-color: #FFFFFF7F;
+                    z-index: 99;
                     &:after {
                         background-color: #01b3a7;
                         color: #e1e1e1;
@@ -450,6 +465,7 @@
                         font-weight: 100;
                         color: gray;
                         padding: 0.5rem 0;
+                        transition: 0.2s ease;
                       &:hover{
                         margin-left: 1rem;
                         transition: .2s ease;
@@ -468,9 +484,10 @@
                             opacity: 0;
                             }
                             &:hover:after {
-                            background-color: #01b3a7;
+                            background-color: red;
                             transform-origin: bottom left;
                             opacity: 1;
+                            transition: 0.2s ease;
                             left: -1rem;
                             }
                     }
@@ -478,10 +495,12 @@
                     .dropp{
                         padding:0 2rem;
                         border-right: 1px solid hsl(0, 0%, 80%);
-                  &:nth-child(2){
-                    border-right: 1px solid hsl(0, 0%, 80%)
-                  }
-
+                    &:nth-child(2){
+                      border-right: 1px solid hsl(0, 0%, 80%)
+                    }
+                    &:nth-child(3){
+                        border-right: none;
+                    }
                   .lol{
                     ul{
                         @include grid(2,0rem);
@@ -501,10 +520,11 @@
                     img{
                         margin-right: 2rem;
                         @include imgFit(15rem,100%);
+                        transition: transform 0.5s ease-out;
 
                     &:hover {
                       transform: scale(1.1);
-                      transition: transform 0.5s ease-out;
+                     
         }
                     }
                 }
@@ -515,7 +535,7 @@
                     background-color:#e1e1e1;
                     position: absolute;
                     top: 6.8rem;
-                    left: -70.8rem;
+                    left: -75rem;
 
                     &_main{
                         display: flex;
