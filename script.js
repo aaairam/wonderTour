@@ -65,3 +65,34 @@ function removeActiveContent(){
   })
 }
 
+ var slider = tns({
+          container: '.post_card',
+          items: 1,
+          slideBy: 'page',
+          autoplay: false,
+          axis: "horizontal",
+          controls: false,
+          nav: true,
+          autoplayPosition: false,
+          autoplayButton:false,
+          responsive:{
+            970:{
+                items:2,
+                autoplay: true,
+            }
+          }
+      });
+
+      var slider = tns({
+            container: '.gallery__imgs',
+            items: 1,
+            slideBy: 'page',
+            autoplay: true,
+            axis: "horizontal",
+            controls: false,
+            nav: true,
+            autoplayPosition: false,
+            autoplayButton:false,
+            autoWidth:true,
+        });
+
