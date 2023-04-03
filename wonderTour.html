@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
 </head>
 <body>
+
+
    <header class="header_main">
      <header class="header">
         <div class="container">
@@ -235,7 +237,7 @@
    </header>
 
    <div class="slider">
-    <div class="wonderBanner">
+    <div class="wonderBanner" id="header">
         <div class="container">
             <div class="wonderBanner_wrapper">
                 <div class="wonderBanner_contents">
@@ -401,7 +403,7 @@
                 </div>
                 <div class="cardpic_content">
                     <div class="cardpic_img">
-                        <img src="./img/cardpic1.jpg" alt="">
+                        <figure><img src="./img/cardpic1.jpg" alt=""></figure>
                         <span>$890</span>
                     </div>
                     <div class="cardpic_text">
@@ -415,14 +417,14 @@
                         </div>
                         <div class="cardpic_button">
                             <div class="bottonblack">
-                                <a href="#">Buy this hour</a>
+                                <a class="qoute" href="#"><span>Buy this Tour</span></a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="cardpic_content">
                     <div class="cardpic_img">
-                        <img src="./img/cardpic1.jpg" alt="">
+                        <figure><img src="./img/cardpic1.jpg" alt=""></figure>
                         <span>$890</span>
                     </div>
                     <div class="cardpic_text">
@@ -436,7 +438,7 @@
                         </div>
                         <div class="cardpic_button">
                             <div class="bottonblack">
-                                <a href="#">Buy this hour</a>
+                                <a class="qoute" href="#"><span>Buy this Tour</span></a>
                             </div>
                         </div>
                     </div>
@@ -735,91 +737,124 @@
         </div>
     </section>
 
+
     <section class="gallery">
         <div class="container">
-            <div class="gallery_wrapper">
-            <div class="gallery_title">
-                <h5>Gallery</h5>
-            </div>
-            <div class="gallery_images">
-                <img src="./img/galleryimg1.jpg" alt="">
-                <i class="fa-solid fa-magnifying-glass-plus"></i>
-            </div>
-            <div class="gallery_images">
-                <img src="./img/galleryimg2.jpg" alt="">
-                <i class="fa-solid fa-magnifying-glass-plus"></i>
-            </div>
-            <div class="gallery_images">
-                <img src="./img/galleryimg3.jpg" alt="">
-                <i class="fa-solid fa-magnifying-glass-plus"></i>
-            </div>
-            <div class="gallery_images">
-                <img src="./img/galleryimg4.jpg" alt="">
-                <i class="fa-solid fa-magnifying-glass-plus"></i>
-            </div>
-            <div class="gallery_images">
-                <img src="./img/galleryimg1.jpg" alt="">
-                <i class="fa-solid fa-magnifying-glass-plus"></i>
-            </div>
+            <div class="gallery__wrapper">
+                <h5><span>Gallery</span></h5>
+                <div class="gallery__imgs">
+                    <div class="pics">
+                        <img src="./img/galleryimg1.jpg" alt="">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
+                    <div class="pics">
+                        <img src="./img/galleryimg2.jpg" alt="">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
+                    <div class="pics">
+                        <img src="./img/galleryimg3.jpg" alt="">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
+                    <div class="pics">
+                        <img src="./img/galleryimg4.jpg" alt="">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
+                    <div class="pics">
+                        <img src="./img/galleryimg1.jpg" alt="">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
+                    <div class="pics">
+                        <img src="./img/galleryimg2.jpg" alt="">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
+                    <div class="pics">
+                        <img src="./img/galleryimg3.jpg" alt="">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
+                </div>
         </div>
         </div>
     </section>
 
 
-
   <section class="blackfooter">
     <div class="container">
-        <div class="blackfooter">
-          <div class="blackfooter_first">
-            <div class="blackfooter_content">
-                <h2>CONTACT US</h2>
-            </div>
-               <div class="blackfooter_div">
-                <div class="blackfooter_icon">
-                    <ul>
-                        <li><i class="fa-solid fa-phone"></i></li>
-                        <li><i class="fa-solid fa-envelope"></i></li>
-                        <li><i class="fa-solid fa-location-arrow"></i></li>
+        <div class="blackfooter_wrapper">
+          <div class="blackfooter_main">
+            <div class="blackfooter_first">
+                <div class="blackfooter_content">
+                    <h2>CONTACT US</h2>
+                </div>
+                   <div class="blackfooter_div">
+                    <div class="blackfooter_icon">
+                        <ul>
+                            <li><i class="fa-solid fa-phone"></i></li>
+                            <li><i class="fa-solid fa-envelope"></i></li>
+                            <li><i class="fa-solid fa-location-arrow"></i></li>
+                        </ul>
+                    </div>
+                    <div class="blackfooter_icon_text">
+                       <ul>
+                        <li><a href="#">+1 323-913-4688</a></li>
+                        <li><a href="#">info@demolink.org</a></li>
+                        <li><a href="#">4730 Crystal Springs Dr, Los Angeles, CA 90027</a></li>
+                       </ul>
+                    </div>
+                   </div>
+              </div>
+              <div class="blackfooter_first">
+                <div class="blackfooter_content">
+                    <h2>POPULAR NEWS</h2>
+                </div>
+                   <div class="blackfooter_item">
+                    <p><a href="#">Your Personal Guide to 5 Best Places to Visit on Earth</a></p>
+                   <small>May 04, 2020</small>
+                    <p><a href="#">Your Personal Guide to 5 Best Places to Visit on Earth</a></p>
+                   <small>May 04, 2020</small>
+                   </div>
+                   
+              </div>
+              <div class="blackfooter_first">
+                <div class="blackfooter_content">
+                    <h2>QUICK LINKS</h2>
+                </div>
+                   <div class="blackfooter_item">
+                    <ul class="dot">
+                        <li><i class="fa-solid fa-circle"></i><a href=""> About Us</a></li>
+                        <li><i class="fa-solid fa-circle"></i><a href=""> Our Tours</a></li>
+                        <li><i class="fa-solid fa-circle"></i><a href=""> Our Team</a></li>
+                        <li><i class="fa-solid fa-circle"></i><a href=""> Gallery</a></li>
+                        <li><i class="fa-solid fa-circle"></i><a href=""> Blog</a></li> 
                     </ul>
-                </div>
-                <div class="blackfooter_icon_text">
-                   <ul>
-                    <li><a href="#">+1 323-913-4688</a></li>
-                    <li><a href="#">info@demolink.org</a></li>
-                    <li><a href="#">4730 Crystal Springs Dr, Los Angeles, CA 90027</a></li>
-                   </ul>
-                </div>
-               </div>
-          </div>
-          <div class="blackfooter_first">
-            <div class="blackfooter_content">
-                <h2>POPULAR NEWS</h2>
-            </div>
-               <div class="blackfooter_item">
-                <p><a href="#">Your Personal Guide to 5 Best Places to Visit on Earth</a></p>
-               <small>May 04, 2020</small>
-                <p><a href="#">Your Personal Guide to 5 Best Places to Visit on Earth</a></p>
-               <small>May 04, 2020</small>
-               </div>
-               
-          </div>
-          <div class="blackfooter_first">
-            <div class="blackfooter_content">
-                <h2>QUICK LINKS</h2>
-            </div>
-               <div class="blackfooter_item">
-                <li>About Us</li>
-                <li>Our Tours</li>
-                <li>Our Team</li>
-                <li>Gallery</li>
-                <li>Blog</li>
-               </div>
-               
+                      <a class="qoute" href="#"><span>Get in touch</span></a>
+                   </div>
+                   
+              </div>
           </div>
         </div>
     </div>
   </section>
-  
+  <section class="footer">
+    <div class="container">
+        <div class="footer__wrapper">
+           <div class="foo">
+            <div class="social">
+                <ul>
+                    <li><a href=""><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-google-plus-g"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+                </ul>
+            </div>
+            <div class="check"><span>© 2023 Wonder Tour. All rights reserved.</span></div>
+            <div class="wrong"><a href="">Privacy Policy</a></div>
+           </div>
+        </div>
+    </div>
+</section>
+
+<div class="backtotop"><a href="#header"><i class="fa-solid fa-angle-up"></i></a></div>
+ 
  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
     <script src="script.js"></script>

@@ -83,16 +83,51 @@ function removeActiveContent(){
           }
       });
 
+      // var slider = tns({
+      //       container: '.gallery_images',
+      //       items: 1,
+      //       slideBy: 'page',
+      //       autoplay: true,
+      //       axis: "horizontal",
+      //       controls: false,
+      //       nav: true,
+      //       autoplayPosition: false,
+      //       autoplayButton:false,
+      //       autoWidth:true,
+      //   });
+
       var slider = tns({
-            container: '.gallery__imgs',
-            items: 1,
-            slideBy: 'page',
-            autoplay: true,
-            axis: "horizontal",
-            controls: false,
-            nav: true,
-            autoplayPosition: false,
-            autoplayButton:false,
-            autoWidth:true,
-        });
+        container: '.gallery__imgs',
+        items: 1,
+        slideBy: 'page',
+        autoplay: true,
+        axis: "horizontal",
+        controls: false,
+        nav: true,
+        autoplayPosition: false,
+        autoplayButton:false,
+        responsive:{
+          970:{
+              nav: false,
+              items:6,
+              slideBy: 1,
+              autoplay: true,
+              controls: true,
+              controlsText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+          }
+        }
+      }); 
+
+
+
+      const btop = document.querySelector(".backtotop");
+      window.addEventListener('scroll', () => {
+      console.log(window.pageYOffset);
+      if  (window.pageYOffset >= 200) {
+      btop.classList.add('show')
+      }else {
+      btop.classList.remove('show')
+  }
+});
+
 
